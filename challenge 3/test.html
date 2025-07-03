@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart Box</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div class="cart-box">
+  <ul class="cart-items">
+    <!-- Items will be added here -->
+  </ul>
+
+  <div class="order-total">
+    <span>Order Total</span>
+    <strong>$<span id="cart-total">0.00</span></strong>
+  </div>
+
+  <div class="note">
+    <span>🌱 This is a <strong>carbon-neutral</strong> delivery</span>
+  </div>
+
+  <button class="confirm-btn">Confirm Order</button>
+</div>
+
+<script>
+  const cart = [
+    { name: "Classic Tiramisu", qty: 1, price: 5.5 },
+    { name: "Vanilla Bean Crème Brûlée", qty: 4, price: 7.0 },
+    { name: "Vanilla Panna Cotta", qty: 2, price: 6.5 },
+    { name: "Chocolate Mousse", qty: 3, price: 6.0 },
+    { name: "Strawberry Cheesecake", qty: 1, price: 8.5 }
+  ];
+
+  function renderCart() {
+    const cartList = document.querySelector('.cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    cartList.innerHTML = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.qty * item.price;
+      total += itemTotal;
+
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <div class="item-info">
+          <strong>${item.name}</strong>
+          <span class="quantity">${item.qty}x @ $${item.price.toFixed(2)}</span>
+        </div>
+        <div class="item-pricing">
+          <small>$${itemTotal.toFixed(2)}</small>
+          <button class="remove-btn" onclick="removeItem(${index})">&times;</button>
+        </div>
+      `;
+      cartList.appendChild(li);
+    });
+
+    cartTotal.textContent = total.toFixed(2);
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+  }
+
+  renderCart();
+</script>
+
+</body>
+</html>

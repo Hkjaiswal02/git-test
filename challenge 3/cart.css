@@ -1,0 +1,115 @@
+    .cart-box {
+      width: 100%;
+      background: hsl(20, 50%, 98%);
+      border-radius: 10px;
+      position: absolute;
+      left: 0;
+      padding: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cart-items {
+      list-style:none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .cart-items li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .item-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .item-info p{
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .item-info div span {
+        margin-right: 5px;
+        font-size: 0.7rem;
+    }
+    
+    .item-info div{
+        text-align: left;
+    }
+    .item-info div .quantity {
+      color: red;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-right: 5px;
+    }
+
+    .item-info div .per-price{
+        color: hsl(14, 25%, 72%);
+    }
+    .item-info div .qty-price{
+        color: hsl(12, 20%, 44%);
+    }
+
+    .remove-btn {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .remove-btn img{
+        width: 100%;
+        border:1px solid hsl(12, 20%, 44%);
+        border-radius: 50%;
+        padding: 3px;
+    }
+    .order-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+    }
+    
+    .order-total .title{
+        font-size: 0.9rem;
+    }
+    .order-total .cart-total{
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .note {
+        display: flex;
+        align-items: center;
+        font-size: 0.75rem;
+        background: hsl(13, 31%, 94%);
+        padding: 25px 40px;
+        height: 40px;
+        gap: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .note.icon{
+        flex-shrink: 0
+    }
+    .note .icon img{
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+    }
+
+    .confirm-btn {
+      width: 100%;
+      background: #ba3a00;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
